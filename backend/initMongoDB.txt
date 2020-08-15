@@ -1,0 +1,41 @@
+show dbs
+
+use ViolinReplicas
+
+db.createCollection('violins')
+
+show collections
+
+db.violins.insertMany([{
+  luthier: 'Honoré Derazey',
+  buildYear: 1862,
+  locality: 'Mirecourt',
+  country: 'Francja',
+  ownership: 'Kolekcja Instrumentów Lutniczych MKiDN',
+  inventoryNo: 'KIL-4, nr ewidencyjny MKiS XV-C-4',
+  history: 'zakupione 02.08.1956 od lutnika Piotra Kubasa; uprzednio długie lata własność jego nauczyciela, znanego lutnika krakowskiego Gustawa Häusslera, który szczycił się ich posiadaniem i stosował wraz z innymi lutnikami jako wzór klasycznej budowy i lutnictwa artystycznego',
+  description: model indywidualny zbliżony do prac Stradivariego; płyta wierzchnia dwuczęściowa świerkowa, płyta spodnia jednoczęściowa z jaworu o wyraźnym płomieniu poprzecznym, w okolicach górnego kloca ozdobiona płaskorzeźbą o motywach kwiatowych, w dolnej części różnokolorową inkrustacją z drewna i masy perłowej, przedstawiającą średniowieczny zamek; obie płyty z podwójną żyłką oraz czterema ozdobnymi płaskorzeźbami w rożkach; boczki ozdobione płaskorzeźbioną i barwioną inskrypcją; szyjka zakończona rzeźbą głowy starca (Tieffenbrucker?); lakier w odcieniach ciemnopomarańczowych; znakomite akustycznie drewno, doskonałe wykonanie i wykończenie; dźwięk o dużym wolumenie, łatwo emitowany, o swoistym brzmieniu, znakomity instrument wirtuozowski; konserwacja\: E. Gosiewski, A. Karolkowski, M. Wyka',
+  inscription: 'kartka lutnicza drukowana w ramce, o ściętych narożach\: H. DERAZEY / A MIRECOURT / Médaille de 1re Classe / Exposition Universelle 1855 / [na bokach awers i rewers medalu z 1855 z napisem\: NAPOLEON III EMPEREUR ] / (18??) [1862?]; powyżej karteczki wypalony podpis\: H. Derazey; na boczkach napis\: HONORATVS  / DERA= / =ZEY FACTOR /  ITALICO MODO / URBE / MIRECURIA',
+  size: 'dł. korpusu 357 mm, szer. górą 168 mm, talia 112 mm, szer. dołem 208 mm, dł. całkowita 625 mm',
+  materialUsed: 'świerk, jawor',
+  violinists: 'Bartłomiej Nizioł, Andrzej Hop',
+  image: '',
+  violinNo: 103,
+}, {
+  luthier: 'Douglas C. Cox',
+  buildYear: 1990,
+  locality: 'Brattleboro, Vermont',
+  country: 'Stany Zjednoczone',
+  ownership: 'prywatna',
+  inventoryNo: null,
+  history: null,
+  description: 'kopia modelu J.B. Vuillaume’a, który wzorował się na Guarnerim del Gesù; płyta wierzchnia dwuczęściowa świerkowa, płyta spodnia dwuczęściowa klonowa; lakier w tonacji czerwonobrązowej',
+  inscription: 'kartka lutnicza drukowana\: Douglas C. Cox 1990 / BRATTLEBORO, VERMONT / [parafka i #165], także na płycie spodniej odręczna parafka i nr 165, oraz odciśnięty monogram DC',
+  size: 'dł. korpusu 360 mm, szer. górą 170 mm, talia 116 mm, szer. dołem 209 mm, dł. całkowita 600 mm',
+  materialUsed: 'świerk, klon z Vermont (USA)',
+  violinists: 'Andrzej Hop - wyróżnienie na XI Międzynarodowym Konkursie Skrzypcowym im. H. Wieniawskiego, Poznań 1996',
+  image: '',
+  violinNo: 3,
+}])
+
+db.violins.find().pretty()
