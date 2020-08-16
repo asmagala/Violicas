@@ -13,7 +13,8 @@ const violinSchema = new mongoose.Schema({
   size: { type: String},
   materialUsed: { type: String},
   violinists: { type: String},
-  image: {type: String},
+  image: {type: Array},
+  violinNo: { type: Number},
 });
 
 module.exports = mongoose.model('Violin', violinSchema);

@@ -3,7 +3,7 @@ const cors = require('cors');
 const path = require('path');
 const mongoose = require('mongoose');
 
-const postsRoutes = require('./routes/posts.routes');
+const violinRoutes = require('./routes/violin.routes');
 
 const app = express();
 
@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 /* API ENDPOINTS */
-app.use('/api', postsRoutes);
+app.use('/api', violinRoutes);
 
 /* API ERROR PAGES */
 app.use('/api', (req, res) => {
@@ -22,12 +22,14 @@ app.use('/api', (req, res) => {
 
 /* REACT WEBSITE */
 app.use(express.static(path.join(__dirname, '../build')));
+//app.use(express.static(path.join(__dirname, '../public')));
+
 app.use('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../build/index.html'));
 });
 
 /* MONGOOSE */
-mongoose.connect('mongodb://localhost:27017/bulletinBoard', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost:27017/ViolinReplicas', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.once('open', () => {
   console.log('Successfully connected to the database');
