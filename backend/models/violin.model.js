@@ -15,6 +15,7 @@ const violinSchema = new mongoose.Schema({
   violinists: { type: String},
   image: {type: Array},
   violinNo: { type: Number},
+  price: { type: Number }
 });
 
 module.exports = mongoose.model('Violin', violinSchema);

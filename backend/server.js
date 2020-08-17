@@ -4,6 +4,8 @@ const path = require('path');
 const mongoose = require('mongoose');
 
 const violinRoutes = require('./routes/violin.routes');
+const orderRoutes = require('./routes/order.routes');
+const orderitemRoutes = require('./routes/orderitem.routes');
 
 const app = express();
 
@@ -14,6 +16,8 @@ app.use(express.urlencoded({ extended: false }));
 
 /* API ENDPOINTS */
 app.use('/api', violinRoutes);
+app.use('/api', orderRoutes);
+app.use('/api', orderitemRoutes);
 
 /* API ERROR PAGES */
 app.use('/api', (req, res) => {
