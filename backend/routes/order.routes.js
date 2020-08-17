@@ -22,7 +22,8 @@ router.get('/orders/:id', async (req, res) => {
     const result = await Order
       .findById(req.params.id)
       .populate('items')
-      .populate('items.violinId');
+      //.populate('items.violinId');
+      
     if(!result) res.status(404).json({ order: 'Not found' });
     else res.json(result);
   }
