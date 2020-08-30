@@ -23,7 +23,7 @@ const Component = ({className, children}) => (
         <div className={styles.menu}>
           <Button color="inherit">Home</Button>
           <Button color="inherit">Cart</Button>
-          <Button color="inherit">Contact</Button>
+          <Button color="inherit" href="#contact">Contact</Button>
           <Button color="inherit">About</Button>
         </div>
       </Toolbar>

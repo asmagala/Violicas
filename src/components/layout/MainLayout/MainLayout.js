@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 import { Header } from '../Header/Header';
+import { Footer } from '../../layout/Footer/Footer';
+import { Contact } from '../../layout/Contact/Contact';
 
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
@@ -14,6 +16,8 @@ const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
     <Header />
     {children}
+    <Contact />
+    <Footer />
   </div>
 );
 
