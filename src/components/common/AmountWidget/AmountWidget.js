@@ -3,25 +3,24 @@ import PropTypes from 'prop-types';
 
 import clsx from 'clsx';
 
-import { Products } from '../../features/Products/Products';
-
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
 
-import styles from './Homepage.module.scss';
+import styles from './AmountWidget.module.scss';
 
-import Container from '@material-ui/core/Container';
+const Component = ({ className, value, onChange }) => {
 
-const Component = ({className}) => (
-  <div className={clsx(className, styles.root)}>
-    <Container maxWidth='lg'>
-      <Products />
-    </Container>
-  </div>
-);
+  return (
+    <div className={clsx(className, styles.root)}>
+      <input type="number" min="1" value={value} onChange={onChange}/>
+    </div>
+  );
+};
 
 Component.propTypes = {
   className: PropTypes.string,
+  value: PropTypes.number,
+  onChange: PropTypes.func,
 };
 
 // const mapStateToProps = state => ({
@@ -35,7 +34,7 @@ Component.propTypes = {
 // const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as Homepage,
-  // Container as Homepage,
-  Component as HomepageComponent,
+  Component as AmountWidget,
+  // Container as AmountWidget,
+  Component as AmountWidgetComponent,
 };

@@ -13,16 +13,19 @@ import Button from '@material-ui/core/Button';
 
 import styles from './Header.module.scss';
 
+import { UpperStripe } from '../UpperStripe/UpperStripe';
+
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
+    <UpperStripe />
     <AppBar position="static">
       <Toolbar className={styles.toolbar}>
-        <Button color="inherit" className={styles.title} href="/">
+        <Button color="inherit" href="/" className={styles.title}>
           <h1>Violicas</h1>
         </Button>
         <div className={styles.menu}>
           <Button color="inherit" href="/">Home</Button>
-          <Button color="inherit">Cart</Button>
+          <Button color="inherit" href="/cart">Cart</Button>
           <Button color="inherit" href="#contact">Contact</Button>
           <Button color="inherit">About</Button>
         </div>

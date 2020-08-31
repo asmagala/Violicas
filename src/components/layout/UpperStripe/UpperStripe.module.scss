@@ -1,0 +1,33 @@
+@import '../../../styles/settings.scss';
+
+.root {
+    background: #d8e0e9;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(5, 52, 114);
+    font-style: italic;
+  
+    .phone {
+      margin: 10px;
+  
+      p {
+        margin: 0;
+      }
+    }
+  
+    .cart {
+      display: flex;
+      margin: 10px;
+  
+      button {
+        padding: 0;
+  
+        .cartContent {
+          background: $background-light;
+          padding: 5px 10px;
+          margin-left: 2px;
+          border-radius: 5px;
+        }
+      }
+    }
+  }

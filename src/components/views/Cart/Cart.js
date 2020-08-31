@@ -8,30 +8,70 @@ import clsx from 'clsx';
 
 import styles from './Cart.module.scss';
 
-const Component = ({className, children}) => (
-  <div className={clsx(className, styles.root)}>
-    <h2>Cart</h2>
-    {children}
-  </div>
-);
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import { TableContainer } from '@material-ui/core';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import { AmountWidget } from '../../common/AmountWidget/AmountWidget';
 
-Component.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
+import { connect } from 'react-redux';
+import { getCart, changeAmount } from '../../../redux/cartRedux.js';
+
+const Component = ({className, cart, changeAmount }) => {
+
+  return (
+    <div className={clsx(className, styles.root)}>
+      <h2>Cart</h2>
+      <TableContainer component={Paper}>
+        <Table className={styles.table} aria-label="cart table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Product</TableCell>
+              <TableCell>Price</TableCell>
+              <TableCell>Quantity</TableCell>
+              <TableCell>Total</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {cart.products.map(item => (
+              <TableRow key={item.id}>
+                <TableCell>{item.title}</TableCell>
+                <TableCell>$ {item.price}</TableCell>
+                <TableCell>
+                  <AmountWidget value={item.amount} onChange={e => changeAmount({ id: item.id, amount: parseInt(e.target.value) })} />
+                </TableCell>
+                <TableCell>$ {item.price * item.amount}</TableCell>
+                <TableCell></TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
+  );
 };
 
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
+Component.propTypes = {
+  className: PropTypes.string,
+  cart: PropTypes.object,
+  changeAmount: PropTypes.func,
+};
 
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
+const mapStateToProps = state => ({
+  cart: getCart(state),
+});
 
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
+const mapDispatchToProps = dispatch => ({
+  changeAmount: (id, amount) => dispatch(changeAmount(id, amount)),
+});
+
+const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as Cart,
-  // Container as Cart,
+  // Component as Cart,
+  Container as Cart,
   Component as CartComponent,
 };

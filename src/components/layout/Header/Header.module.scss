@@ -5,6 +5,7 @@
     justify-content: space-between;
     .title:hover {
       background-color: transparent;
+      color: $toolbar-hover-color;
     }
     .menu {
       button {
@@ -12,7 +13,7 @@
         padding: 15px;
 
         &:hover {
-          color: $font-light;
+          color: $toolbar-hover-color;
         }
       }
     }

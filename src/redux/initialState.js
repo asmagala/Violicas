@@ -42,4 +42,16 @@ export const initialState = {
       error: false,
     },
   },
-};
+  cart: {
+    products: [
+      {
+        id: '5',
+        title: 'i145-0',
+        price: 5700,
+        images: ['/images/i145-0.jpg', '/images/i145-1.jpg', '/images/i145-2.jpg', '/images/i145-3.jpg'],
+        description: 'Product of id = 5',
+        amount: 2,
+      },
+    ],
+  },
+}
