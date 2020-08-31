@@ -33,7 +33,7 @@ const Component = ({ className, product }) => {
           <CardContent className={styles.content}>
           
             <div className={styles.description}>
-              <div id="unit_total_price">price: $price}</div><br />
+              <div id="unit_total_price">price: ${price}</div><br />
               {description}
             </div>
             <div className={styles.images}>
@@ -41,7 +41,7 @@ const Component = ({ className, product }) => {
                 <CardMedia
                   key={id}
                   component="img"
-                  alt="decu box"
+                  alt=""
                   image={item}
                   className={styles.image}
                 />

@@ -24,7 +24,7 @@ const Component = ({className, id, title, images, price }) => (
       </div>
 
       <div className={styles.price}>
-        $ {price}
+        ${price}
       </div>
 
       <div>
