@@ -29,7 +29,7 @@ const Component = ({className, children}) => (
           <Button color="inherit" href="/">Home</Button>
           <Button color="inherit" href="/cart">Cart</Button>
           <Button color="inherit" href="#contact">Contact</Button>
-          <Button color="inherit">About</Button>
+          <Button color="inherit" href="#">About</Button>
         </div>
       </Toolbar>
     </AppBar>

@@ -22,6 +22,22 @@ import { getCart, sendOrder } from '../../../redux/cartRedux.js';
 import styles from './OrderSummary.module.scss';
 
 const Component = ({ className, cart, sendOrder }) => {
+  const [client, setClient] = React.useState({
+    firstName: '',
+    lastName: '',
+    address: '',
+    postCode: '',
+    city: '',
+    country: '',
+    phone: '',
+    email: '',
+  });
+
+  const handleChange = ({ target }) => {
+    const { name, value } = target;
+
+    setClient({ ...client, [name]: value });
+  };
 
   return (
     <div className={clsx(className, styles.root)}>
@@ -35,8 +51,8 @@ const Component = ({ className, cart, sendOrder }) => {
                 <Grid item>
                   <Card elevation={3} className={clsx(styles.card, styles.billing)}>
                     <CardHeader title="Contact" />
-                    <CostForm cart={cart}>
-                      <Button color="primary" variant="contained" onClick={() => sendOrder(cart)}>Order</Button>
+                    <CostForm onChange={handleChange} client={client}>
+                      <Button color="primary" variant="contained" onClick={() => sendOrder({ cart: cart, client: client})}>Order</Button>
                     </CostForm>
                   </Card>
                 </Grid>
@@ -78,7 +94,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  sendOrder: (cart) => dispatch(sendOrder(cart)),
+  sendOrder: (cart, client) => dispatch(sendOrder(cart, client)),
 });
 
 const OrderContainer = connect(mapStateToProps, mapDispatchToProps)(Component);

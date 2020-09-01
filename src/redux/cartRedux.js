@@ -24,7 +24,7 @@ export const sendOrder = payload => ({ payload, type: SEND_ORDER });
 export const reducer = (statePart = {}, action = {}) => {
   switch (action.type) {
     case ADD_TO_CART: {
-      const { products, total } = statePart;
+      const { products } = statePart;
       const { id, price } = action.payload.product;
 
       let isInCart = false;
