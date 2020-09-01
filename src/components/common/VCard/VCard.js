@@ -6,6 +6,8 @@ import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import Button from '@material-ui/core/Button';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
 
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';

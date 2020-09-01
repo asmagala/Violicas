@@ -53,5 +53,7 @@ export const initialState = {
         amount: 2,
       },
     ],
+    amount: 1,
+    total: 3500,
   },
 };

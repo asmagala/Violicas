@@ -1,5 +1,4 @@
 @import '../../../styles/settings.scss';
-
 @import '../../../styles/mixins.scss';
 
 .root {
@@ -9,21 +8,26 @@
     @include title;
   }
 
-  .card {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  .tableContainer {
+    padding: 20px;
+  }
 
-    .headings {
-      margin: 20px;
-      width: 100%;
+  .table {
+
+    .notesWrapper {
       display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: baseline;
-      border-bottom: 1px $background-mid solid;
+      justify-content: space-between;
+      align-items: center;
+
+      .notes {
+        padding: 5px;
+        margin-left: 30px;
+        flex: 2;
+      }
+    }
+
+    .delete {
+      margin-left: 20px;
     }
   }
 }

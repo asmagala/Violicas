@@ -14,18 +14,22 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
-//import { Alert, Progress } from 'reactstrap';
-//import { AmountWidget } from '../../common/AmountWidget/AmountWidget';
+import { AmountWidget } from '../../common/AmountWidget/AmountWidget';
 
 
 import { connect } from 'react-redux';
 import { getById } from '../../../redux/productsRedux.js';
-//import { addProduct } from '../../../redux/cartRedux';
+import { addProduct } from '../../../redux/cartRedux';
 
-
-const Component = ({ className, product }) => {
+const Component = ({ className, product,  addProduct }) => {
 
   const { id, title, description, images, price } = product;
+
+  const [value, setValue] = React.useState(1);
+
+  const onChange = ({ target }) => {
+    setValue(parseInt(target.value));
+  };
 
   return (
     <div className={clsx(className, styles.root)}>
@@ -46,7 +50,7 @@ const Component = ({ className, product }) => {
                 <CardMedia
                   key={id}
                   component="img"
-                  alt=""
+                  alt="violin"
                   image={item}
                   className={styles.image}
                 />
@@ -54,7 +58,8 @@ const Component = ({ className, product }) => {
             </div>
             <div className={styles.action}>
               <div className={styles.amount}>
-                <input type="number" min="1" defaultValue="1" />
+                <AmountWidget value={value} onChange={onChange} />
+                {/*<input type="number" min="1" defaultValue="1" />*/}
               </div>
               
               <Button className={styles.submit} color="primary" variant="contained" type="submit">Buy</Button>
@@ -69,17 +74,18 @@ const Component = ({ className, product }) => {
 Component.propTypes = {
   product: PropTypes.object,
   className: PropTypes.string,
+  addProduct: PropTypes.func,
 };
 
 const mapStateToProps = (state, props) => ({
   product: getById(state, props.match.params.id),
 });
 
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
+const mapDispatchToProps = dispatch => ({
+  addProduct: (product, amount) => dispatch(addProduct( { product, amount })),
+});
 
-const ProductContainer = connect(mapStateToProps)(Component);
+const ProductContainer = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
   //Component as Product,
