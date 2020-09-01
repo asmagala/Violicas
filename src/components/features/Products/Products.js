@@ -10,8 +10,6 @@ import { connect } from 'react-redux';
 import { getAll } from '../../../redux/productsRedux.js';
 
 const Component = ({className, products}) => {
-  console.log('products', products);
-
   return (
     <div className={clsx(className, styles.root)}>
       <h2 className={styles.title} >Products</h2>

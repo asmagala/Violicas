@@ -59,6 +59,7 @@ const Component = ({ className, product,  addProduct }) => {
             <div className={styles.action}>
               <div className={styles.amount}>
                 <AmountWidget value={value} onChange={onChange} />
+                <div className={styles.total}>$ {price * value}</div>
                 {/*<input type="number" min="1" defaultValue="1" />*/}
               </div>
               
