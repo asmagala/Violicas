@@ -10,10 +10,10 @@ import clsx from 'clsx';
 
 //import Button from '@material-ui/core/Button';
 import styles from './UpperStripe.module.scss';
-import { Cart } from '../../views/Cart/Cart';
+//import { Cart } from '../../views/Cart/Cart';
 
-import { connect } from 'react-redux';
-import { getCart } from '../../../redux/cartRedux.js';
+//import { connect } from 'react-redux';
+//import { getCart } from '../../../redux/cartRedux.js';
 
 const Component = ({className, cart }) => (
   <div className={clsx(className, styles.root)}>
@@ -33,7 +33,7 @@ const Component = ({className, cart }) => (
       <Cart />
       </div>
     */}
-    <Cart />
+    {/*<Cart />*/}
     
   </div>
 );
@@ -43,9 +43,9 @@ Component.propTypes = {
   cart: PropTypes.object,
 };
 
-const mapStateToProps = state => ({
-  cart: getCart(state),
-});
+//const mapStateToProps = state => ({
+//  cart: getCart(state),
+//});
 
 // const mapDispatchToProps = dispatch => ({
 //   someAction: arg => dispatch(reduxActionCreator(arg)),

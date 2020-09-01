@@ -5,14 +5,14 @@ export const initialState = {
         id: '1',
         title: 'i103-0',
         price: 2300,
-        images: ['/images/i103-0.jpg', '/images/i103-1.jpg', '/images/i103-2.jpg', '/images/i103-3.jpg'],
+        images: ['/images/i103-0.jpg', '/images/i103-1.jpg', '/images/i103-4.jpg', '/images/i103-5.jpg'],
         description: 'Product of id = 1',
       },
       {
         id: '2',
         title: 'i20-0',
         price: 4850,
-        images: ['/images/i20-0.jpg'],
+        images: ['/images/i20-0.jpg', '/images/i20-1.jpg', '/images/i20-2.jpg', '/images/i20-3.jpg', '/images/i20-4.jpg'],
         description: 'Product of id = 2',
       },
       {
@@ -26,7 +26,7 @@ export const initialState = {
         id: '4',
         title: 'i66-0',
         price: 5700,
-        images: ['/images/i66-0.jpg'],
+        images: ['/images/i66-0.jpg', '/images/i66-1.jpg', '/images/i66-2.jpg', '/images/i66-3.jpg'],
         description: 'Product of id = 4',
       },
       {
@@ -54,4 +54,4 @@ export const initialState = {
       },
     ],
   },
-}
+};

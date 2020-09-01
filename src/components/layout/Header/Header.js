@@ -8,12 +8,14 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 
-// import { connect } from 'react-redux';
-// import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
-
 import styles from './Header.module.scss';
 
 import { UpperStripe } from '../UpperStripe/UpperStripe';
+
+//import { connect } from 'react-redux';
+//import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
+
+
 
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>

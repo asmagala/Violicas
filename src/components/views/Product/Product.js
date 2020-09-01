@@ -14,12 +14,17 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
+//import { Alert, Progress } from 'reactstrap';
+//import { AmountWidget } from '../../common/AmountWidget/AmountWidget';
+
 
 import { connect } from 'react-redux';
 import { getById } from '../../../redux/productsRedux.js';
+//import { addProduct } from '../../../redux/cartRedux';
+
 
 const Component = ({ className, product }) => {
-  console.log(product);
+
   const { id, title, description, images, price } = product;
 
   return (
@@ -57,9 +62,9 @@ const Component = ({ className, product }) => {
           </CardContent>
         </Card>
       </Container>
-  </div>
-    );
-  };
+    </div>
+  );
+};
 
 Component.propTypes = {
   product: PropTypes.object,
