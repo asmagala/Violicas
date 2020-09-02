@@ -46,11 +46,12 @@ const Component = ({ className, product,  addProduct }) => {
               {description}
             </div>
             <div className={styles.images}>
+              {console.log('----', images)}
               {images.map(item => (
                 <CardMedia
-                  key={id}
+                  key={item}
                   component="img"
-                  alt="violin"
+                  alt={item}
                   image={item}
                   className={styles.image}
                 />
@@ -63,7 +64,7 @@ const Component = ({ className, product,  addProduct }) => {
                 {/*<input type="number" min="1" defaultValue="1" />*/}
               </div>
               
-              <Button className={styles.submit} color="primary" variant="contained" type="submit">Buy</Button>
+              <Button className={styles.submit} color="primary" variant="contained" onClick={() => addProduct(product, value)}>Buy</Button>
             </div>
           </CardContent>
         </Card>

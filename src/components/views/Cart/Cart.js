@@ -49,7 +49,7 @@ const Component = ({className, cart, changeAmount, addNotes, removeProduct }) =>
                     {item.title}
                     <textarea
                       value={item.notes}
-                      placeholder="Personalize your product here"
+                      placeholder="Special wishes for this item."
                       onChange={e => addNotes({ id: item.id, notes: e.target.value })}
                       className={styles.notes}>
                     </textarea>
@@ -62,7 +62,7 @@ const Component = ({className, cart, changeAmount, addNotes, removeProduct }) =>
                     ${item.price * item.amount}
                     <Button color="secondary" variant="outlined" className={styles.delete} onClick={() => removeProduct({ id: item.id })}><DeleteIcon /></Button>
                   </TableCell>
-                 </TableRow>
+                </TableRow>
               ))}
             </TableBody>
           </Table>

@@ -5,10 +5,9 @@ const Violin = require('../models/violin.model');
 
 router.get('/violins', async (req, res) => {
   try {
-    const result = await Violin
-      //.find({status: 'published'})
-      //.select('author created title photo')
-      //.sort({created: -1});
+    const result = await Violin.find();
+    //.select('author created title photo')
+    //.sort({created: -1});
     if(!result) res.status(404).json({ violin: 'Not found' });
     else res.json(result);
   }
